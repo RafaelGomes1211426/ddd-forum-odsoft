@@ -1,13 +1,3 @@
-task npmInstallBackend(type: Exec) {
-    commandLine 'npm', 'install'
-    workingDir 'src'
-}
-
-task npmBuildBackend(type: Exec) {
-    commandLine 'npm', 'run', 'build'
-    workingDir 'src'
-}
-
-task build {
-    dependsOn npmInstallBackend, npmBuildBackend
+plugins {
+    id "com.github.node-gradle.node" version "7.0.0"
 }
