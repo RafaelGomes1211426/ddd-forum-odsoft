@@ -1,0 +1,13 @@
+task npmInstallBackend(type: Exec) {
+    commandLine 'npm', 'install'
+    workingDir 'src'
+}
+
+task npmBuildBackend(type: Exec) {
+    commandLine 'npm', 'run', 'build'
+    workingDir 'src'
+}
+
+task build {
+    dependsOn npmInstallBackend, npmBuildBackend
+}
